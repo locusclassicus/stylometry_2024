@@ -11,7 +11,7 @@
   <meta name="generator" content="quarto-1.3.450">
 
   <meta name="author" content="Ольга Алиева">
-  <meta name="dcterms.date" content="2024-04-18">
+  <meta name="dcterms.date" content="2024-04-19">
   <title>Стилометрия</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -30,6 +30,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+      }
+    pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+    div.sourceCode
+      { color: #f8f8f2;  }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #f8f8f2; } /* Normal */
+    code span.al { color: #f07178; background-color: #2a0f15; font-weight: bold; } /* Alert */
+    code span.an { color: #d4d0ab; } /* Annotation */
+    code span.at { color: #00e0e0; } /* Attribute */
+    code span.bn { color: #d4d0ab; } /* BaseN */
+    code span.bu { color: #abe338; } /* BuiltIn */
+    code span.cf { color: #ffa07a; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #abe338; } /* Char */
+    code span.cn { color: #ffd700; } /* Constant */
+    code span.co { color: #f8f8f2; font-style: italic; } /* Comment */
+    code span.cv { color: #ffd700; } /* CommentVar */
+    code span.do { color: #f8f8f2; } /* Documentation */
+    code span.dt { color: #ffa07a; } /* DataType */
+    code span.dv { color: #d4d0ab; } /* DecVal */
+    code span.er { color: #f07178; text-decoration: underline; } /* Error */
+    code span.ex { color: #00e0e0; font-weight: bold; } /* Extension */
+    code span.fl { color: #d4d0ab; } /* Float */
+    code span.fu { color: #ffa07a; } /* Function */
+    code span.im { color: #abe338; } /* Import */
+    code span.in { color: #d4d0ab; } /* Information */
+    code span.kw { color: #ffa07a; font-weight: bold; } /* Keyword */
+    code span.op { color: #ffa07a; } /* Operator */
+    code span.ot { color: #00e0e0; } /* Other */
+    code span.pp { color: #dcc6e0; } /* Preprocessor */
+    code span.re { color: #00e0e0; background-color: #f8f8f2; } /* RegionMarker */
+    code span.sc { color: #abe338; } /* SpecialChar */
+    code span.ss { color: #abe338; } /* SpecialString */
+    code span.st { color: #abe338; } /* String */
+    code span.va { color: #00e0e0; } /* Variable */
+    code span.vs { color: #abe338; } /* VerbatimString */
+    code span.wa { color: #dcc6e0; } /* Warning */
   </style>
   <link rel="stylesheet" href="Stylometry_files/libs/revealjs/dist/theme/quarto.css">
   <link href="Stylometry_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -337,19 +402,18 @@
 </div>
 </div>
 
-  <p class="date">2024-04-18</p>
+  <p class="date">2024-04-19</p>
 </section>
 <section id="план-лекции" class="slide level2">
 <h2>План лекции</h2>
 <ol type="1">
 <li class="fragment">Стилометрия: начало</li>
-<li class="fragment">На пути к многомерному анализу</li>
-<li class="fragment">Подходы, основанные на расстоянии</li>
-<li class="fragment">Машинное обучение с учителем</li>
-<li class="fragment">Методы проверки модели</li>
-<li class="fragment">Обучение без учителя: кластеризация</li>
-<li class="fragment">Ограничения стилометрии</li>
-<li class="fragment">Поиск альтернатив</li>
+<li class="fragment">Случай “Федералиста”</li>
+<li class="fragment">Ленивая Delta</li>
+<li class="fragment">Заглядывая в черный ящик</li>
+<li class="fragment">Обучение без учителя</li>
+<li class="fragment">Блеск и нищета стилометрии</li>
+<li class="fragment">Филогенетические решения</li>
 </ol>
 </section>
 <section>
@@ -390,7 +454,7 @@
 <p>…совпадает с Шекспиром примерно так же, как Шекспир совпадает с самим собой.</p>
 </blockquote>
 </div><div class="column" style="width:50%;">
-<p><img data-src="images/shakespeare.png" style="width:80.0%" data-fig-align="right"> <img data-src="images/bacon.png" style="width:80.0%" data-fig-align="right"></p>
+<p><img data-src="images/shakespeare.png" style="width:80.0%" data-fig-align="right" alt="Шекспир и Марлоу"> <img data-src="images/bacon.png" style="width:80.0%" data-fig-align="right" alt="Шекспир и Бэкон"></p>
 </div>
 </div>
 </section>
@@ -435,14 +499,233 @@
 <li class="fragment"><p><strong>1978</strong>: Э.Мортон (<a href="https://archive.org/details/literarydetectio0000mort">Literary Detection</a>) приходит к выводу, что только 4 послания ап. Павла являются подлинными.</p></li>
 <li class="fragment"><p><strong>1993</strong>: Неудачное выступление Мортона на британском телевидении.</p></li>
 </ul>
+</section></section>
+<section>
+<section id="случай-федералиста" class="title-slide slide level1 center">
+<h1>Случай “Федералиста”</h1>
+
 </section>
 <section class="slide level2">
 
-<p>Начало современной стилометрии</p>
+<p>Спорный случай: “Записки федералиста”</p>
+<ul>
+<li class="fragment"><p><strong>1963</strong>: американские статистики Ф. Мостеллер и Д. Уоллес опубликовали статью <a href="https://www.jstor.org/stable/2283270">“Inference in an Authorship Problem”</a>», в которой успешно разрешили вопрос о том, кто написал 12 спорных памфлетов из “Записок федералиста”. Они использовали наиболее частотные слова и байесовский классификатор.</p></li>
+<li class="fragment"><p>Их подход лежит в основе алгоримта МО, известного как “наивный Байес”. Он применяется для фильтрации спама и при определении <a href="https://web.stanford.edu/~jurafsky/slp3/4.pdf">эмоциональной тональности</a> документов.</p></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/Madison.jpg"></p>
+<figcaption>Джеймс Мэдисон</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<p><img data-src="images/federalist.jpg"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/Hamilton.jpg"></p>
+<figcaption>Александр Гамильтон</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<p><em>Дискриминантный анализ</em> позволяет классифицировать объекты по двум или более группам, основываясь на линейной комбинации переменных, которая называется <em>дискриминантной функцией</em>:</p>
+<p><span class="math display">\[DF = -0.5\cdot var_1 + 1.2\cdot var_2 + 0.85\cdot var_3\]</span></p>
+
+<img data-src="images/lda2.png" class="r-stretch quarto-figure-center"></section>
+<section class="slide level2">
+
+<p>Дискриминантная функция максимизируют различия между группами и минимизует дисперсию внутри группы по формуле: <span class="math inline">\(\frac{(\bar{x_1}-\bar{x_2})^2}{s^2_1+s^2_2}\)</span>. Каждому признаку присваивается вес. Чем больше числитель и чем меньше знаменатель, тем этот вес выше.</p>
+
+<img data-src="images/lda.png" class="r-stretch quarto-figure-center"></section>
+<section class="slide level2">
+
+<p>Как это работает</p>
+
+<img data-src="images/lda_plot.png" class="r-stretch"><p>NB: Современные имплементации алгоритма отличаются от метода, предложенного Р. Фишером в 1936 г.</p>
+</section>
+<section class="slide level2">
+
+<p>Байесовские методы в стилометрии</p>
+<div class="columns">
+<div class="column" style="width:60%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/bayes_f.png"></p>
+<figcaption><em>Картинка</em> <a href="https://heartbeat.comet.ml/understanding-the-mathematics-behind-naive-bayes-ab6ee85f50d0"><em>отсюда</em></a></figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:40%;">
+<p>Формула Байеса позволяет «переставить причину и следствие»: по известному факту события вычислить вероятность того, что оно было вызвано данной причиной.</p>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<p><em>Задача</em>: Вы обнаружили бабочку с редким орнаментом на крыльях. У исчезающих бабочек есть такой орнамент с вероятностью 0.99, а у обычных бабочек он встречается только в 2% случаев. При этом лишь 3% видов бабочек находятся на грани исчезновения. Какова вероятность, что бабочка относится к исчезающему виду?</p>
+<p><em>Решение</em>:</p>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>(<span class="fl">0.99</span> <span class="sc">*</span> <span class="fl">0.03</span>) <span class="sc">/</span> (<span class="fl">0.03</span> <span class="sc">*</span> <span class="fl">0.99</span> <span class="sc">+</span> <span class="fl">0.97</span> <span class="sc">*</span> <span class="fl">0.02</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.604888</code></pre>
+</div>
+</div>
+</div>
+<div class="fragment">
+<p>На место бабочки 🦋 можно подставить писателя ✍️, а на место узора - слова.</p>
+</div>
+</section>
+<section class="slide level2">
+
+<p>Но слов-признаков много, и нам нужно все учесть:</p>
+<p><img data-src="images/nb_1.png"></p>
+<p>Знаменатель будет для всех групп одинаков, поэтому:</p>
+<p><img data-src="images/nb_2.png"></p>
+<p>Отсюда название “наивный Байес”: перемножение вероятностей покоится на допущении их независимости.</p>
+<p>(<a href="https://heartbeat.comet.ml/understanding-the-mathematics-behind-naive-bayes-ab6ee85f50d0"><em>Источник</em></a>.)</p>
+<div class="fragment">
+<p><em>Вопрос</em>: Что если в обучающем корпусе слово у какого-то автора не встречается?</p>
+</div>
+</section>
+<section class="slide level2">
+
+<p>Наивный Байес может плохо реагировать на присутствие коррелированных переменных (он же наивный!):</p>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="images/nb_all.png"> <a href="https://www.kaggle.com/datasets/tobyanderson/federalist-papers">Источник данных</a>.</p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="images/nb_red.png"></p>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<p>Линейно-дискриминантный анализ тоже достаточно привередливый:</p>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="images/lda_all.png"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="images/lda_red.png"></p>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="ленивая-delta" class="title-slide slide level1 center">
+<h1>Ленивая Delta</h1>
+
+</section>
+<section class="slide level2">
+
+<p>2002: Джон Берроуз предлагает метод классификации под названием <a href="https://academic.oup.com/dsh/article-abstract/17/3/267/929277?login=false">Delta</a>.</p>
+<div class="fragment">
+<p>Подробнее о том, как это работает, на очень простом <a href="https://rpubs.com/locusclassicus/delta_very_simple_example">примере</a>.</p>
+</div>
+</section>
+<section class="slide level2">
+
+<p>Простой пример векторного пространства:</p>
+
+<img data-src="images/knn.png" class="r-stretch"><p><a href="http://www.bdax.com.au/library/ebooks/Machine%20Learning%20with%20R.pdf"><em>Источник.</em></a></p>
+</section>
+<section class="slide level2">
+
+<p>Как считаются расстояния между векторами?</p>
+
+<img data-src="images/dist.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<p>Rolling Delta</p>
+
+<img data-src="https://sysblok.ru/wp-content/uploads/2021/02/image2-6.jpg" class="r-stretch"></section>
+<section class="slide level2">
+
+<p>Модификации Delta (доступны в <a href="https://rdrr.io/cran/stylo/">Stylo</a>):</p>
+<ol type="1">
+<li class="fragment">Берроуз: манхэттенское расстояние со стандартизацией</li>
+<li class="fragment"><a href="https://www.researchgate.net/publication/227400810_Interpreting_Burrows%27s_Delta_Geometric_and_Probabilistic_Foundations">Аргамон</a>: евклидово расстояние</li>
+<li class="fragment"><a href="https://academic.oup.com/dsh/article/32/suppl_2/ii4/3865676">Вюрцбургская Delta</a>: косинусное сходство со стандартизацией</li>
+<li class="fragment">Delta Эдера: манхэттенское расстояние на квадратах значений, и др.</li>
+</ol>
+<div class="fragment">
+<p>Что еще можно настроить: 1. Число признаков 2. Culling</p>
+</div>
+</section>
+<section class="slide level2">
+
+<p>Классификация на основе расстояний применяется:</p>
+<ul>
+<li class="fragment">в МО с учителем: k-NN, или метод k ближайших соседений;</li>
+<li class="fragment">в МО без учителя (кластеризация).</li>
+</ul>
+</section>
+<section class="slide level2">
+
+<p>k-NN – это <del>мой любимый</del> алгоритм, в котором для отнесения объекта к классу используется информация о его соседях.</p>
+<ul>
+<li class="fragment">он очень простой (см. картинку с томатом);</li>
+<li class="fragment">не делает допущений о характере распределения;</li>
+<li class="fragment">хорошо справляется с многоклассовой классификацией и несбалансированными данными;</li>
+<li class="fragment">работает с разными метриками расстояния.</li>
+</ul>
+</section>
+<section class="slide level2">
+
+<p>Для демонстрации его возможностей воспользуемся датасетом <a href="https://rdrr.io/cran/stylo/man/galbraith.html">Galbraith</a>, в котором хранятся частотности для романов следующих авторов:</p>
+<ul>
+<li class="fragment">Харлан Кобен — американский писатель, автор детективных романов-триллеров;</li>
+<li class="fragment">К.С. Льюис со всей эпопеей про Нарнию;</li>
+<li class="fragment">Дж.К. Роулинг и сами знаете кто 🧙;</li>
+<li class="fragment">Дж.Р.Р. Толкиен тоже знаете с кем 💍;</li>
+<li class="fragment">некто Роберт Галбрейт с “Зовом кукушки” .</li>
+</ul>
+</section>
+<section class="slide level2">
+
+
+<img data-src="images/knn_cmat.png" class="r-stretch"><p>И “Зов кукушки” уходит… Роулинг!</p>
+</section>
+<section class="slide level2">
+
+<p>Работать с метриками расстояний можно безо всякого МО, но бывает полезно построить модель</p>
+<ul>
+<li class="fragment">для оценки модели;</li>
+<li class="fragment">настройки параметров 🛠.</li>
+</ul>
+</section>
+<section class="slide level2">
+
+</section></section>
+<section id="итоги" class="title-slide slide level1 center">
+<h1>Итоги</h1>
+<p>В этой лекции вы узнали:</p>
+<ul>
+<li class="fragment">о начале <del>псевдо</del>науки стилометрии;</li>
+<li class="fragment">о некоторых алгоритмах МО с учителем: линейно-дискриминантный анализ, наивный Байес, метод k ближайших соседей;</li>
+<li class="fragment">о методах машинного обучения без учителя</li>
+</ul>
 <div class="footer footer-default">
 
 </div>
-</section></section>
+</section>
     </div>
   </div>
 
@@ -654,6 +937,44 @@
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {

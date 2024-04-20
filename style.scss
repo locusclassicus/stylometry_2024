@@ -1,0 +1,27 @@
+/*-- scss:defaults --*/
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+// fonts
+$font-family-sans-serif: Roboto Condensed, sans-serif !default;
+
+// colors
+$body-bg: #002b36 !default;
+$body-color: #93a1a1 !default;
+$text-muted: $body-color !default;
+$link-color: #268bd2 !default;
+$selection-bg: #d33682 !default;
+$input-panel-bg: rgba(233, 236, 239, 0.2) !default;
+
+// headings
+$presentation-heading-font: "Roboto Condensed", sans-serif !default;
+$presentation-heading-color: #eee8d5 !default;
+$presentation-heading-text-transform: uppercase !default;
+
+/*-- scss:rules --*/
+
+html * {
+  color-profile: sRGB;
+  rendering-intent: auto;
+}
