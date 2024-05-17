@@ -7,11 +7,14 @@
 <link href="Stylometry_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="Stylometry_files/libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="Stylometry_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="Stylometry_files/libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.3.450">
+<link href="Stylometry_files/libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="Stylometry_files/libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="Stylometry_files/libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="Stylometry_files/libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.4.553">
 
   <meta name="author" content="Ольга Алиева">
-  <meta name="dcterms.date" content="2024-04-28">
+  <meta name="dcterms.date" content="2024-05-17">
   <title>Стилометрия</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -32,7 +35,7 @@
     }
     /* CSS for syntax highlighting */
     pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span { line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
     .sourceCode { overflow: visible; }
     code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -222,7 +225,8 @@
   }
 
   .callout.callout-titled .callout-body > .callout-content > :last-child {
-    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0;
   }
 
   .callout.callout-titled .callout-icon::before {
@@ -402,9 +406,9 @@
 </div>
 </div>
 
-  <p class="date">2024-04-28</p>
+  <p class="date">2024-05-17</p>
 </section>
-<section id="план-лекции" class="slide level2">
+<section id="план-лекции" class="slide level2 scrollable">
 <h2>План лекции</h2>
 <ol type="1">
 <li class="fragment">Стилометрия: начало</li>
@@ -426,14 +430,14 @@
 <p><strong>1851</strong>: шведский математик и логик Огастес де Морган <a href="https://archive.org/details/memoirofaugustus00demouoft/page/216/mode/2up?view=theater">предположил</a>, что споры о подлинности Послания к евреям святого ап. Павла можно разрешить путем измерения средней длины слов.</p>
 <p><br></p>
 
-<img data-src="images/morgan.png" style="width:50.0%" class="r-stretch quarto-figure-center"></section>
+<img data-src="images/morgan.png" class="quarto-figure quarto-figure-center r-stretch" style="width:50.0%"></section>
 <section class="slide level2">
 
 <div class="columns">
 <div class="column" style="width:60%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="images/mendenhall.png" style="width:75.0%"></p>
+<p><img data-src="images/mendenhall.png" class="quarto-figure quarto-figure-center" style="width:75.0%"></p>
 </figure>
 </div>
 </div><div class="column" style="width:40%;">
@@ -454,7 +458,7 @@
 <p>…совпадает с Шекспиром примерно так же, как Шекспир совпадает с самим собой.</p>
 </blockquote>
 </div><div class="column" style="width:50%;">
-<p><img data-src="images/shakespeare.png" style="width:80.0%" data-fig-align="right" alt="Шекспир и Марлоу"> <img data-src="images/bacon.png" style="width:80.0%" data-fig-align="right" alt="Шекспир и Бэкон"></p>
+<p><img data-src="images/shakespeare.png" class="quarto-figure quarto-figure-right" style="width:80.0%" alt="Шекспир и Марлоу"> <img data-src="images/bacon.png" class="quarto-figure quarto-figure-right" style="width:80.0%" alt="Шекспир и Бэкон"></p>
 </div>
 </div>
 </section>
@@ -468,10 +472,10 @@
 </section>
 <section class="slide level2">
 
-<p><strong>1897</strong>: Винценты Лютославский, обобщая предыдущие исследования, вывел “Закон стилистической близости”: <span class="math inline">\(A = x1 + 2*x2 + 3*x3 + 4*x4\)</span></p>
+<p><strong>1897</strong>: Винценты Лютославский, обобщая предыдущие исследования, вывел “Закон стилистической близости”: <span class="math inline">\(A = x1 + 2 \times x2 + 3 \times x3 + 4 \times x4\)</span></p>
 <p><br></p>
 
-<img data-src="images/lutoslawski.jpg" style="width:80.0%" class="r-stretch quarto-figure-center"></section>
+<img data-src="images/lutoslawski.jpg" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"></section>
 <section class="slide level2">
 
 <p>Развитие статистических методов:</p>
@@ -489,13 +493,13 @@
 <section class="slide level2">
 
 <p>Метод кумулятивных сумм</p>
-
-<img data-src="images/cumsum.png" class="lightbox r-stretch"></section>
+<p><a href="images/cumsum.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img data-src="images/cumsum.png"></a></p>
+</section>
 <section class="slide level2">
 
 <p>Громкие “открытия” (и разоблачения)</p>
 <ul>
-<li class="fragment"><p><strong>1971</strong>: Э.Мортон и А.Винспир используют _cumsum_для исследования платоновского корпуса (<a href="https://archive.org/details/itsgreektocomput0000mort/">It’s Greek to the Computer</a>).</p></li>
+<li class="fragment"><p><strong>1971</strong>: Э.Мортон и А.Винспир используют <em>cumsum</em> для исследования платоновского корпуса (<a href="https://archive.org/details/itsgreektocomput0000mort/">It’s Greek to the Computer</a>).</p></li>
 <li class="fragment"><p><strong>1978</strong>: Э.Мортон (<a href="https://archive.org/details/literarydetectio0000mort">Literary Detection</a>) приходит к выводу, что только 4 послания ап. Павла являются подлинными.</p></li>
 <li class="fragment"><p><strong>1993</strong>: Неудачное выступление Мортона на британском телевидении.</p></li>
 </ul>
@@ -525,9 +529,9 @@
 </section>
 <section class="slide level2">
 
-<div class="quarto-layout-panel">
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<div class="quarto-layout-panel" data-layout-ncol="3">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="images/Madison.jpg"></p>
@@ -538,7 +542,7 @@
 <div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
 <p><img data-src="images/federalist.jpg"></p>
 </div>
-<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="images/Hamilton.jpg"></p>
@@ -557,8 +561,7 @@
 <section class="slide level2">
 
 
-<img data-src="https://uw.pressbooks.pub/app/uploads/sites/641/2023/01/Legendre.Legendre.2012_Figure.11.11-e1674974446111.png" class="r-stretch quarto-figure-center"><p><a href="https://uw.pressbooks.pub/appliedmultivariatestatistics/chapter/discriminant-analysis/"><em>Источник</em>.</a></p>
-</section>
+<img data-src="images/lda2.png" class="r-stretch quarto-figure-center"><p class="caption"><a href="https://youtu.be/azXCzI57Yfc?si=TOcIrHoUWejCuXRw">Источник.</a></p></section>
 <section class="slide level2">
 
 <p>Как это работает</p>
@@ -587,7 +590,7 @@
 <p><em>Решение</em>:</p>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>(<span class="fl">0.99</span> <span class="sc">*</span> <span class="fl">0.03</span>) <span class="sc">/</span> (<span class="fl">0.03</span> <span class="sc">*</span> <span class="fl">0.99</span> <span class="sc">+</span> <span class="fl">0.97</span> <span class="sc">*</span> <span class="fl">0.02</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a>(<span class="fl">0.99</span> <span class="sc">*</span> <span class="fl">0.03</span>) <span class="sc">/</span> (<span class="fl">0.03</span> <span class="sc">*</span> <span class="fl">0.99</span> <span class="sc">+</span> <span class="fl">0.97</span> <span class="sc">*</span> <span class="fl">0.02</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.604888</code></pre>
 </div>
@@ -611,9 +614,9 @@
 <section class="slide level2">
 
 <p>Наивный Байес и конструирование признаков:</p>
-<div class="quarto-layout-panel">
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <p><img data-src="images/nb_all.png"> <a href="https://www.kaggle.com/datasets/tobyanderson/federalist-papers">Источник данных</a>.</p>
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
@@ -625,8 +628,8 @@
 <section class="slide level2">
 
 <p>Линейно-дискриминантный анализ тоже достаточно привередливый:</p>
-<div class="quarto-layout-panel">
-<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <p><img data-src="images/lda_all.png"></p>
 </div>
@@ -667,7 +670,7 @@
 <p>Rolling Delta</p>
 
 <img data-src="https://sysblok.ru/wp-content/uploads/2021/02/image2-6.jpg" class="r-stretch"></section>
-<section class="slide level2">
+<section class="slide level2 scrollable">
 
 <p>Модификации Delta (доступны в <a href="https://rdrr.io/cran/stylo/">Stylo</a>):</p>
 <ol type="1">
@@ -888,8 +891,10 @@
 <section id="у-меня-все" class="slide level2">
 <h2>У меня все</h2>
 
-<img data-src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExcm05aHRpdXJwNXZscnp5NjNxbDhpcGE1aGNiaDJ3MGh5Nndkb2VhMSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/YnBntKOgnUSBkV7bQH/giphy.gif" class="r-stretch"><div class="footer footer-default">
+<img data-src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExcm05aHRpdXJwNXZscnp5NjNxbDhpcGE1aGNiaDJ3MGh5Nndkb2VhMSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/YnBntKOgnUSBkV7bQH/giphy.gif" class="r-stretch"><div class="quarto-auto-generated-content">
+<div class="footer footer-default">
 
+</div>
 </div>
 </section></section>
     </div>
@@ -918,7 +923,6 @@
       Reveal.initialize({
 'controlsAuto': true,
 'previewLinksAuto': false,
-'smaller': false,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
@@ -1217,10 +1221,27 @@
         // clear code selection
         e.clearSelection();
       });
-      function tippyHover(el, contentFn) {
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp('/' + window.location.host + '/');
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
         const config = {
           allowHTML: true,
-          content: contentFn,
           maxWidth: 500,
           delay: 100,
           arrow: false,
@@ -1230,8 +1251,17 @@
           interactive: true,
           interactiveBorder: 10,
           theme: 'light-border',
-          placement: 'bottom-start'
+          placement: 'bottom-start',
         };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
           config['offset'] = [0,0];
           config['maxWidth'] = 700;
         window.tippy(el, config); 
@@ -1245,7 +1275,11 @@
           try { href = new URL(href).hash; } catch {}
           const id = href.replace(/^#\/?/, "");
           const note = window.document.getElementById(id);
-          return note.innerHTML;
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
         });
       }
       const findCites = (el) => {
@@ -1287,6 +1321,31 @@
       }
     });
     </script>
+    <script>var lightboxQuarto = GLightbox({"openEffect":"zoom","closeEffect":"zoom","descPosition":"bottom","selector":".lightbox","loop":false});
+    window.onload = () => {
+      lightboxQuarto.on('slide_before_load', (data) => {
+        const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+        const href = trigger.getAttribute('href');
+        if (href !== null) {
+          const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+          if (imgEl !== null) {
+            const srcAttr = imgEl.getAttribute("src");
+            if (srcAttr && srcAttr.startsWith("data:")) {
+              slideConfig.href = srcAttr;
+            }
+          }
+        } 
+      });
+
+      lightboxQuarto.on('slide_after_load', (data) => {
+        const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(slideNode);
+        }
+      });
+
+    };
+              </script>
     
 
 </body></html>
